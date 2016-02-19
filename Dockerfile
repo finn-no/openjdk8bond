@@ -1,14 +1,16 @@
-FROM alpine:3.2
+FROM alpine:3.3
 
 USER root
 
 RUN mkdir /app
 ENV JAVA_APP_DIR /app
+ENV JAVA_VERSION 8.72.15-r1
+
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
  && apk add --update \
     curl \
-    openjdk8-jre-base \
+    openjdk8-jre-base=$JAVA_VERSION \
  && rm /var/cache/apk/*
 
 ADD agent-bond-opts /opt/run-java-options

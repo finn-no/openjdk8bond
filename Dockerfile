@@ -4,8 +4,7 @@ USER root
 
 RUN mkdir /app
 ENV JAVA_APP_DIR /app
-ENV JAVA_VERSION 8.72.15-r1
-
+ENV JAVA_VERSION 8.121.13-r1
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
  && apk add --update \
